@@ -1,6 +1,6 @@
 ![ClientHub](./assets/Payment.png)
 
-**App Flutter de gateway de pagamento com integração Stripe**
+**App Flutter para pagamentos com integração Stripe**
 
 App Flutter para processamento de pagamentos via Stripe, construído com gerenciamento de estado reativo inteiramente nativo do Flutter sem utilização de pacotes para gerenciamento de estado como Provider, Riverpod ou Bloc.
 
