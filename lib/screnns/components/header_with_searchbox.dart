@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:paygateway/constants.dart';
 
 class HeaderWithSearchBox extends StatelessWidget {
@@ -24,8 +23,8 @@ class HeaderWithSearchBox extends StatelessWidget {
             decoration: BoxDecoration(
               color: kPrimaryColor,
               borderRadius: BorderRadius.only(
-                bottomLeft: Radius.circular(32),
-                bottomRight: Radius.circular(32),
+                bottomLeft: Radius.circular(18),
+                bottomRight: Radius.circular(18),
               ),
             ),
             child: Row(
@@ -38,9 +37,7 @@ class HeaderWithSearchBox extends StatelessWidget {
                   ),
                 ),
                 Spacer(),
-                Image.asset(
-                  "/home/rbp/Documentos/projetos/paygateway/assets/images/logo.png",
-                ),
+                Image.asset("assets/images/nlogo.png", height: 45),
               ],
             ),
           ),
@@ -80,7 +77,7 @@ class HeaderWithSearchBox extends StatelessWidget {
                       ),
                     ),
                   ),
-                  SvgPicture.asset("assets/icons/search.svg"),
+                  Icon(Icons.search, color: kPrimaryColor),
                 ],
               ),
             ),

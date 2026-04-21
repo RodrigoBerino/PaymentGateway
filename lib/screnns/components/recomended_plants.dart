@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:paygateway/constants.dart';
+import 'package:paygateway/screnns/details/details_screen.dart';
 
 class RecomendedPlant extends StatelessWidget {
   const RecomendedPlant({super.key});
@@ -11,25 +12,40 @@ class RecomendedPlant extends StatelessWidget {
       child: Row(
         children: [
           PlantCard(
-            image: "assets/images/image_1.png",
-            title: "Samantha",
-            country: "Russia",
-            price: 440,
-            press: () {},
+            image: "assets/tech_images/image.png",
+            title: "RTX 4070",
+            country: "NVIDIA",
+            price: 599,
+            press: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => DetailsScreen()),
+              );
+            },
           ),
           PlantCard(
-            image: "assets/images/image_2.png",
-            title: "Samantha",
-            country: "Russia",
-            price: 440,
-            press: () {},
+            image: "assets/tech_images/image_copy.png",
+            title: "AsusBook",
+            country: "Apple",
+            price: 1999,
+            press: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => DetailsScreen()),
+              );
+            },
           ),
           PlantCard(
-            image: "assets/images/image_2.png",
-            title: "Samantha",
-            country: "Russia",
-            price: 440,
-            press: () {},
+            image: "assets/tech_images/image_copy_2.png",
+            title: "UltraSharp",
+            country: "Dell",
+            price: 349,
+            press: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => DetailsScreen()),
+              );
+            },
           ),
         ],
       ),
@@ -57,17 +73,28 @@ class PlantCard extends StatelessWidget {
 
     return Container(
       margin: EdgeInsets.only(
-        left: kDefaultPadding / 2,
+        left: kDefaultPadding,
         top: kDefaultPadding / 2,
         bottom: kDefaultPadding * 2.5,
       ),
       width: size.width * 0.4,
-      child: Column(
-        children: [
-          Image.asset(image),
-          GestureDetector(
-            onTap: press,
-            child: Container(
+      child: GestureDetector(
+        onTap: press,
+        child: Column(
+          children: [
+            ClipRRect(
+              borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(10),
+                topRight: Radius.circular(10),
+              ),
+              child: Image.asset(
+                image,
+                height: 150,
+                width: double.infinity,
+                fit: BoxFit.cover,
+              ),
+            ),
+            Container(
               padding: EdgeInsets.all(kDefaultPadding / 2),
               decoration: BoxDecoration(
                 color: Colors.white,
@@ -84,6 +111,7 @@ class PlantCard extends StatelessWidget {
                 ],
               ),
               child: Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   RichText(
                     text: TextSpan(
@@ -93,7 +121,7 @@ class PlantCard extends StatelessWidget {
                           style: Theme.of(context).textTheme.labelLarge,
                         ),
                         TextSpan(
-                          text: country.toUpperCase(),
+                          text: country,
                           style: TextStyle(
                             color: kPrimaryColor.withValues(alpha: 0.5),
                           ),
@@ -111,8 +139,8 @@ class PlantCard extends StatelessWidget {
                 ],
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

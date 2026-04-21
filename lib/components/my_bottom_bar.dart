@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:paygateway/constants.dart';
 
 class MyBottomBar extends StatelessWidget {
@@ -28,16 +27,22 @@ class MyBottomBar extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: <Widget>[
           IconButton(
-            icon: SvgPicture.asset("assets/icons/flower.svg"),
-            onPressed: () {},
+            icon: Icon(Icons.home, color: kPrimaryColor),
+            onPressed: null,
           ),
           IconButton(
-            icon: SvgPicture.asset("assets/icons/heart-icon.svg"),
-            onPressed: () {},
+            icon: Icon(
+              Icons.favorite_border,
+              color: kPrimaryColor.withValues(alpha: 0.4),
+            ),
+            onPressed: null,
           ),
           IconButton(
-            icon: SvgPicture.asset("assets/icons/user-icon.svg"),
-            onPressed: () {},
+            icon: Icon(
+              Icons.person_outline,
+              color: kPrimaryColor.withValues(alpha: 0.4),
+            ),
+            onPressed: null,
           ),
         ],
       ),

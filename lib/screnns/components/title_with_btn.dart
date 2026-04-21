@@ -38,7 +38,7 @@ class TitleWithCustom extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: 24,
       child: Stack(
         children: <Widget>[
@@ -56,7 +56,6 @@ class TitleWithCustom extends StatelessWidget {
             child: Container(
               margin: EdgeInsets.only(right: kDefaultPadding / 4),
               height: 7,
-              color: kPrimaryColor.withOpacity(0.2),
             ),
           ),
         ],
